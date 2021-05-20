@@ -1,0 +1,138 @@
+connect-flash: enviar mensaje entre las vistas
+bcrypjs: cifrar contraseñas y convierte en un hash
+express-handlebars:
+express-session: guardar session para cuando el usuario se loguee
+method-override: permite enviar peticiones put o delete desde las vistas
+mongoose :
+passport:permite autenticar al usuario
+dotenv; permite usar variables de entorno
+nodemon o supervisor
+handlebars
+npm-check-update
+
+carpetas
+-src
+    -config: configurar modulos
+        
+        -passport.js: configuracioón del modulo passport para login y sesiones
+  
+    -controllers: almacenar funciones usadas al momento de que el usuario visite algunas rutas del servidor
+    
+        -index.controller.js: funciones del enrutador
+        
+        -notes.controller.js: funciones de las rutas de las notas
+        
+        -users.controller.js: funciones de las rutas de registro y login
+    
+    -helpers: funciones que se aplican desde las vistas (codigo adicional para los archivos handlebars)
+    
+    -models: almacena los modelos de los datos que seran guardados en la base de datos
+        
+        -Note.js: Modelo de los datos que se almacenaran sobre las notas creadas
+        
+        -User.js: Modelo de los datos del usuario en la base de datos
+        
+    -public: almacena archivos staticos como css, imagenes, fuentes, etc
+        
+        -css:
+        
+           -main.css: 
+    
+    -routes: almacena las rutas o urls del servidor
+    
+        -index.routes.js: configurar las url de la app
+        
+        -notes.routes.js: url para mostrar y crear las notas
+        
+        -users.routes.js: url de login y registro
+    
+    -views: almacena los archivos handlebars o html que
+    
+        -layouts: vistas principales 
+            
+            -main.hbs:
+            
+        -notes: vistas para las notas
+            
+            -all-notes.hbs:vista de las notas creadas
+            
+            -new-notes.hbs:formulario para introducir una nueva nota
+            
+            -edit-note.hbs:formulario para editar notas
+            
+        -partials: vistas secundarias
+            
+            -messages.hbs: alertas
+            
+            -navigation.hbs:
+            
+            -errors.hbs: mensaje de error 
+        
+        -users:
+        
+            -signin.hbs:fomulario de login
+            
+            -signup.hbs: formulario de regidtro
+            
+    -index.hbs: vista del home
+    
+    -about.hbs:
+    
+    -database.js:Conexion con la base de datos
+
+    -index.js: archivo principal de la app
+
+    -server.js : funcionalidad del servidor
+
+-.env: variables globales
+
+-.gitignore: señala q archivos no seran subidos
+
+-package.json: configuracion de los paquetes y extenciones de node
+
+
+
+Guia de trabajo
+
+01.estructura del proyecto
+02.Construir el servidor
+03.Base de datos
+04.modelos de la base de datos
+05.Vistas (handlebars)
+06.Bootstrap y fontawesome
+07.Rutas
+08.rutas para las notas
+09.Handlebasr y formularios para las notas
+10.Renderizar lista de notas con handlebars
+11.Eliminar notas con method-override
+12.Actaualización de notas
+13.Mensajes con coonnect-flash
+14.vistas del login y el registro de usuarios
+15.registro de usuario o signup
+16.login de usuarios con passport a bcrypt
+17.Proteger las rutas de express con passport
+18. 
+
+
+
+"dependencies": {
+    "@handlebars/allow-prototype-access": "^1.0.3",
+    "bcryptjs": "^2.4.3",
+    "connect-flash": "^0.1.1",
+    "express": "^4.17.1",
+    "express-handlebars": "^5.1.0",
+    "express-session": "^1.17.1",
+    "method-override": "^3.0.0",
+    "mongoose": "^5.10.0",
+    "morgan": "^1.10.0",
+    "passport": "^0.4.1",
+    "passport-local": "^1.0.0",
+    "socket.io": "^2.3.0"
+  },
+  "devDependencies": {
+    "dotenv": "^8.2.0",
+    "handlebars": "^4.7.6",
+    "nodemon": "^2.0.4",
+    "npm-check-updates": "^7.1.1",
+    "supervisor": "^0.12.0"
+  }
